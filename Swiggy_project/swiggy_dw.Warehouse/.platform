@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Warehouse",
+    "displayName": "swiggy_dw"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "271c770e-3d35-b6d8-4a6d-a32036187809"
+  }
+}

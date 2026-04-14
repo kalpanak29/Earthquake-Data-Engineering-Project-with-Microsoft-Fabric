@@ -1,0 +1,281 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "0715f9b025aa240aeb26",
+  "position": {
+    "x": 0,
+    "y": 121.30718954248366,
+    "z": 0,
+    "height": 598.1699346405228,
+    "width": 1261.1764705882351,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "map",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "earthquake_events_gold"
+                    }
+                  },
+                  "Property": "country_code"
+                }
+              },
+              "queryRef": "earthquake_events_gold.country_code",
+              "nativeQueryRef": "Country",
+              "active": true,
+              "displayName": "Country"
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "earthquake_events_gold"
+                    }
+                  },
+                  "Property": "sig_class"
+                }
+              },
+              "queryRef": "earthquake_events_gold.sig_class",
+              "nativeQueryRef": "Classification",
+              "displayName": "Classification"
+            }
+          ]
+        },
+        "Size": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "earthquake_events_gold"
+                        }
+                      },
+                      "Property": "sig"
+                    }
+                  },
+                  "Function": 4
+                }
+              },
+              "queryRef": "Sum(earthquake_events_gold.sig)",
+              "nativeQueryRef": "Maximum (Significance)",
+              "displayName": "Maximum (Significance)"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "earthquake_events_gold"
+                        }
+                      },
+                      "Property": "id"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "Min(earthquake_events_gold.id)",
+              "nativeQueryRef": "Number of Events",
+              "displayName": "Number of Events"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "earthquake_events_gold"
+                        }
+                      },
+                      "Property": "longitude"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(earthquake_events_gold.longitude)",
+              "nativeQueryRef": "Sum of longitude"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Worldwide Events'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Bubble size related to maximum significance'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5b2795c9393b2b9081ca",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "earthquake_events_gold"
+              }
+            },
+            "Property": "country_code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "dd223e17e9872d06c9bf",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "earthquake_events_gold"
+                  }
+                },
+                "Property": "sig"
+              }
+            },
+            "Function": 4
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "abd7a0ab71a1ca075e07",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "earthquake_events_gold"
+                  }
+                },
+                "Property": "longitude"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "dbeb337943fdd9c46bbc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "earthquake_events_gold"
+              }
+            },
+            "Property": "sig_class"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "cf10756406d16b3aa001",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "earthquake_events_gold"
+                  }
+                },
+                "Property": "id"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

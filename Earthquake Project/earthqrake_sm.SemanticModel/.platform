@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "earthqrake_sm"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d8e8c09f-7ac2-b2f0-4a0f-1ab639f44768"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "Temp_notebook",
+    "description": ""
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4febcf3c-e799-be5e-42ba-42d80f0e8067"
+  }
+}

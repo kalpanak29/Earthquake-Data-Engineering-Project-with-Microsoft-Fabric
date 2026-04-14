@@ -1,0 +1,73 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "6b041f6ceb5619514ead",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 1000,
+    "height": 185.42056074766353,
+    "width": 305.04672897196258,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "earthquake_events_gold"
+                    }
+                  },
+                  "Property": "time"
+                }
+              },
+              "queryRef": "earthquake_events_gold.time",
+              "nativeQueryRef": "Select a date range",
+              "active": true,
+              "displayName": "Select a date range"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "earthquake_events_gold"
+                  }
+                },
+                "Property": "time"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Between'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

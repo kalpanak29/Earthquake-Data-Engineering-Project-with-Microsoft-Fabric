@@ -1,0 +1,1 @@
+CREATE SCHEMA swiggy_schema;

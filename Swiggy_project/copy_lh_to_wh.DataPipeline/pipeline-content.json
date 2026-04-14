@@ -1,0 +1,112 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "ForEach",
+        "typeProperties": {
+          "isSequential": true,
+          "items": {
+            "value": "@variables('table_list')",
+            "type": "Expression"
+          },
+          "activities": [
+            {
+              "type": "Copy",
+              "typeProperties": {
+                "source": {
+                  "type": "LakehouseTableSource",
+                  "datasetSettings": {
+                    "type": "LakehouseTable",
+                    "typeProperties": {
+                      "table": {
+                        "value": "@item()",
+                        "type": "Expression"
+                      }
+                    },
+                    "schema": [],
+                    "linkedService": {
+                      "name": "swiggy_lh",
+                      "properties": {
+                        "type": "Lakehouse",
+                        "typeProperties": {
+                          "artifactId": "e995a4c2-7256-9e30-4e7a-af4b97c4967b",
+                          "workspaceId": "00000000-0000-0000-0000-000000000000",
+                          "rootFolder": "Tables"
+                        },
+                        "annotations": []
+                      }
+                    },
+                    "annotations": []
+                  }
+                },
+                "sink": {
+                  "type": "DataWarehouseSink",
+                  "tableOption": "autoCreate",
+                  "allowCopyCommand": true,
+                  "copyCommandSettings": {},
+                  "writeBehavior": "Insert",
+                  "datasetSettings": {
+                    "type": "DataWarehouseTable",
+                    "typeProperties": {
+                      "schema": "swiggy_project",
+                      "table": {
+                        "value": "@item()",
+                        "type": "Expression"
+                      }
+                    },
+                    "schema": [],
+                    "linkedService": {
+                      "name": "swiggy_dw",
+                      "properties": {
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                          "artifactId": "36187809-a320-4a6d-b6d8-3d35271c770e",
+                          "endpoint": "bzhc5bdddrdudnn4fof25uxzta-y35jzz4dd2bupdr2p5oeol2cfu.datawarehouse.fabric.microsoft.com",
+                          "workspaceId": "e79cfac6-1e83-4783-8e3a-7f5c472f422d"
+                        },
+                        "annotations": []
+                      }
+                    },
+                    "annotations": []
+                  }
+                },
+                "translator": {
+                  "type": "TabularTranslator",
+                  "typeConversion": true,
+                  "typeConversionSettings": {
+                    "allowDataTruncation": true,
+                    "treatBooleanAsNumber": false
+                  }
+                },
+                "enableStaging": true
+              },
+              "policy": {
+                "timeout": "0.12:00:00",
+                "retry": 0,
+                "retryIntervalInSeconds": 30,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Copy data1",
+              "dependsOn": []
+            }
+          ]
+        },
+        "name": "ForEach1",
+        "dependsOn": []
+      }
+    ],
+    "variables": {
+      "table_list": {
+        "type": "Array",
+        "defaultValue": [
+          "dim_date",
+          "dim_dish",
+          "dim_location",
+          "dim_restaurant",
+          "fact_orders"
+        ]
+      }
+    }
+  }
+}
